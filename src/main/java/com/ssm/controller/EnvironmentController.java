@@ -62,7 +62,7 @@ public class EnvironmentController {
 		try {
 			List<Environment> environmentList = environmentService.getAllEnvironment();
 			if (environmentList.size() > 0) {
-				response.getOutputStream().write(JSON.toJSONString(environmentList).getBytes());
+				response.getOutputStream().write(JSON.toJSONString(environmentList).getBytes("utf-8"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

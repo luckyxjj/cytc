@@ -61,7 +61,7 @@ public class UserController {
 			List<User> usertList = userService.getAllUser();
 
 			if (usertList.size() > 0) {
-				response.getOutputStream().write(JSON.toJSONString(usertList).getBytes());
+				response.getOutputStream().write(JSON.toJSONString(usertList).getBytes("utf-8"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

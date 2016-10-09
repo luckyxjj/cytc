@@ -47,7 +47,7 @@ public class MessageController {
 				message.setReceiverNo(receiverNo);
 				List<Message> messageList = this.messageService.getBySendIdAndReceId(message);
 				if (messageList.size() > 0) {
-					response.getOutputStream().write(JSON.toJSONString(messageList).getBytes());
+					response.getOutputStream().write(JSON.toJSONString(messageList).getBytes("utf-8"));
 
 				}
 			}
@@ -72,7 +72,7 @@ public class MessageController {
 
 				List<Message> messageList = this.messageService.getMsgListById(admId);
 				if (messageList != null) {
-					response.getOutputStream().write(JSON.toJSONString(messageList).getBytes());
+					response.getOutputStream().write(JSON.toJSONString(messageList).getBytes("utf-8"));
 
 				}
 			}
@@ -105,7 +105,7 @@ public class MessageController {
 			if (code > 0) {
 				response.getOutputStream().write(JSON.toJSONString(message).getBytes());
 			} else {
-				response.getOutputStream().write("添加失败".getBytes());
+				response.getOutputStream().write("添加失败".getBytes("utf-8"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

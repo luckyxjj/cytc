@@ -76,7 +76,7 @@ public class AboutController {
 					List<AboutImg> aboutImgList = this.aboutImgService.getByAboutId(about.getId());
 					about.setAboutImgList(aboutImgList);
 				}
-				response.getOutputStream().write(JSON.toJSONString(aboutList).getBytes());
+				response.getOutputStream().write(JSON.toJSONString(aboutList).getBytes("utf-8"));
 
 			}
 		} catch (Exception e) {

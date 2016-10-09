@@ -62,7 +62,7 @@ public class HomeImgController {
 		try {
 			List<HomeImg> homeImgList = this.homeImgService.getAllHomeImg();
 			if (homeImgList.size() > 0) {
-				response.getOutputStream().write(JSON.toJSONString(homeImgList).getBytes());
+				response.getOutputStream().write(JSON.toJSONString(homeImgList).getBytes("utf-8"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

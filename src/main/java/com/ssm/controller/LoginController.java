@@ -83,9 +83,9 @@ public class LoginController {
 				HttpSession session2 = request.getSession();
 				session2.setAttribute("userLogin", id);
 				session2.setMaxInactiveInterval(3600);
-				response.getOutputStream().write("登入成功".getBytes());
+				response.getOutputStream().write("登入成功".getBytes("utf-8"));
 			} else {
-				response.getOutputStream().write("用户名或密码错误，请重新输入！".getBytes());
+				response.getOutputStream().write("用户名或密码错误，请重新输入！".getBytes("utf-8"));
 			}
 
 		} catch (Exception e) {

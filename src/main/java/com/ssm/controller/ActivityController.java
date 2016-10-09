@@ -69,7 +69,7 @@ public class ActivityController {
 			List<Activity> activityList = activityService.getAllActivity();
 			if (activityList.size() > 0) {
 				model.addAttribute("activityList", activityList);
-				response.getOutputStream().write(JSON.toJSONString(activityList).getBytes());
+				response.getOutputStream().write(JSON.toJSONString(activityList).getBytes("utf-8"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

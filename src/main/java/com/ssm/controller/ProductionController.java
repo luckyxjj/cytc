@@ -76,7 +76,7 @@ public class ProductionController {
 					List<ProductionImg> productionImg = this.productionImgService.getByProductionId(production.getId());
 					production.setProductionImgList(productionImg);
 				}
-				response.getOutputStream().write(JSON.toJSONString(productionList).getBytes());
+				response.getOutputStream().write(JSON.toJSONString(productionList).getBytes("utf-8"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
