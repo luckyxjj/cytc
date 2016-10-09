@@ -38,7 +38,7 @@ public class AboutController {
 	DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	String time = format.format(new Date());
 
-	/* 获取所有关于信息 */
+	/* 获取所有关于信息jj */
 	@RequestMapping("/getAbout")
 	public String getAbout(HttpServletRequest request, Model model, HttpServletResponse response, HttpSession session) {
 		response.setCharacterEncoding("utf-8");
