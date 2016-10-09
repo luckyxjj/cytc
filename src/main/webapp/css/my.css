@@ -1,0 +1,231 @@
+/*«∞Ã®*/
+.control-top {
+	margin-top: 20px;
+}
+
+.bottom-link {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.bottom-link ul {
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	list-style: none;
+	height: 20px;
+	font-size: 14px;
+}
+
+.bottom-link li {
+	float: left;
+	width: 50%;
+	line-height: 20px;
+	text-align: center;
+	word-wrap: break-word;
+}
+
+.bottom-link li a:hover {
+	text-decoration: none;
+	color: red;
+}
+
+.center-control {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.center-control label {
+	font-family: "Œ¢»Ì—≈∫⁄";
+	font-size: 20px;
+	margin-top: 5px;
+}
+
+.info-control {
+	margin-top: 40px;
+}
+
+.info-control label {
+	font-family: "Œ¢»Ì—≈∫⁄";
+	font-size: 20px;
+	margin-top: 30px;
+}
+
+.info-control span {
+	font-family: "Œ¢»Ì—≈∫⁄";
+	font-size: 18px;
+	margin-left: 20px;
+}
+
+.bottom-bg {
+	background-color: green;
+	margin-top: 5px;
+}
+
+.bottom-color {
+	color: #FFFFFF;
+}
+
+.head-bg {
+	/*background-color: #000000 !important;*/
+	color: #FFFFFF;
+}
+
+.ad-align {
+	text-align: center !important;
+	width: 100%;
+	min-height: 200px;
+	max-height: 400px;
+}
+
+.bottom-link a {
+	color: lightblue;
+}
+
+.panel-body h4 {
+	margin-top: 20px;
+}
+
+.panel-body a:hover {
+	color: red;
+}
+
+.bottom-declaration {
+	margin-bottom: 10px;
+}
+
+.bottom-declaration p {
+	clear: left;
+	text-align: center;
+	color: black;
+}
+/*∫ÛÃ®π‹¿Ì*/
+.nav-bg {
+	/*background-color: darkgray;*/
+	text-align: center;
+	color: white;
+	margin-bottom: 10px !important;
+}
+
+.panel-heading .panel-title {
+	text-align: center;
+}
+
+.left-bg {
+	padding-left: 0px;
+}
+
+.right-bg {
+	padding-left: 15px;
+}
+
+.table-text-align {
+	text-align: center !important;
+}
+
+.table-text-align th {
+	text-align: center;
+}
+
+.caption {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 20px;
+	color: #400040;
+	text-align: center;
+	color: #5CB85C;
+}
+
+.add-align {
+	float: right !important;
+	margin-right: 8px !important;
+}
+
+.title-info {
+	float: left !important;
+	color: #5CB85C;
+}
+
+.id-hide {
+	display: none;
+}
+
+.select-control {
+	width: 300px;
+}
+
+.select-title {
+	float: left;
+	padding-top: 7px;
+	padding-right: 10px;
+}
+
+.member-select {
+	float: left;
+	width: 400px;
+	margin-left: 200px
+}
+
+.my-table {
+	border: 1px solid #ddd;
+	clear: both;
+	border-collapse: collapse;
+	margin-bottom: 8px;
+}
+
+.my-table th, td {
+	border: 1px solid #ddd;
+	text-align: center;
+}
+
+.my-table th {
+	height: 30px !important;
+}
+
+.my-caption {
+	padding-top: 8px;
+	padding-bottom: 40px;
+	color: #777;
+	text-align: left;
+}
+
+.update-img-border {
+	border: 1px solid #DDD;
+	border-radius: 5px;
+	padding-top: 8px;
+	margin-left: 15px;
+	padding-bottom: 8px;
+}
+
+.panel-body p {
+	text-align: center;
+}
+
+.hide-display {
+	display: none;
+}
+
+.back-index {
+	margin-top: 25px;
+	text-align: right;
+}
+
+.back-index a {
+	color: white;
+	font-size: 18px;
+}
+
+.back-index a:hover {
+	text-decoration: none;
+	color: red;
+}
+
+.top-title {
+	margin-bottom: 20px !important;
+	margin-right: -100px;
+}
+
+.teacher-name {
+	font-size: 25px;
+	margin-top: -8px;
+}

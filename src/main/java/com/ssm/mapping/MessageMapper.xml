@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.MessageMapper">
+	<resultMap id="BaseResultMap" type="com.ssm.pojo.Message">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="send_no" property="sendNo" jdbcType="VARCHAR" />
+		<result column="receiver_no" property="receiverNo" jdbcType="VARCHAR" />
+		<result column="content" property="content" jdbcType="VARCHAR" />
+		<result column="flag" property="flag" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="VARCHAR" />
+		<result column="update_time" property="updateTime" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, send_no, receiver_no, content, flag, create_time, update_time
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from tb_message
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<!-- 通过sendId和receiverId获取留言记录 -->
+	<select id="selectBySendIdAndReceId" resultMap="BaseResultMap"
+		parameterType="com.ssm.pojo.Message">
+		select
+		<include refid="Base_Column_List" />
+		from tb_message
+		where send_no=#{sendNo,jdbcType=VARCHAR} and
+		receiver_no=#{receiverNo,jdbcType=VARCHAR}
+		or send_no=#{receiverNo,jdbcType=VARCHAR} and
+		receiver_no=#{sendNo,jdbcType=VARCHAR}
+	</select>
+	<!-- 获取聊天列表 -->
+	<select id="selectMsgListById" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from tb_message where id in (select max(id) from tb_message group by send_no)
+		and send_no != #{id,jdbcType=INTEGER} order by send_no desc;
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from tb_message
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.ssm.pojo.Message">
+		insert into tb_message (id, send_no, receiver_no,
+		content, flag, create_time,
+		update_time)
+		values (#{id,jdbcType=INTEGER}, #{sendNo,jdbcType=VARCHAR},
+		#{receiverNo,jdbcType=VARCHAR},
+		#{content,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR},
+		#{updateTime,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.ssm.pojo.Message">
+		insert into tb_message
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="sendNo != null">
+				send_no,
+			</if>
+			<if test="receiverNo != null">
+				receiver_no,
+			</if>
+			<if test="content != null">
+				content,
+			</if>
+			<if test="flag != null">
+				flag,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="sendNo != null">
+				#{sendNo,jdbcType=VARCHAR},
+			</if>
+			<if test="receiverNo != null">
+				#{receiverNo,jdbcType=VARCHAR},
+			</if>
+			<if test="content != null">
+				#{content,jdbcType=VARCHAR},
+			</if>
+			<if test="flag != null">
+				#{flag,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.ssm.pojo.Message">
+		update tb_message
+		<set>
+			<if test="sendNo != null">
+				send_no = #{sendNo,jdbcType=VARCHAR},
+			</if>
+			<if test="receiverNo != null">
+				receiver_no = #{receiverNo,jdbcType=VARCHAR},
+			</if>
+			<if test="content != null">
+				content = #{content,jdbcType=VARCHAR},
+			</if>
+			<if test="flag != null">
+				flag = #{flag,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.ssm.pojo.Message">
+		update tb_message
+		set send_no = #{sendNo,jdbcType=VARCHAR},
+		receiver_no = #{receiverNo,jdbcType=VARCHAR},
+		content = #{content,jdbcType=VARCHAR},
+		flag = #{flag,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=VARCHAR},
+		update_time = #{updateTime,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+</mapper>
