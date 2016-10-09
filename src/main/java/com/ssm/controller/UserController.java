@@ -47,7 +47,7 @@ public class UserController {
 		return "user";
 	}
 
-	/* 获取所有用户信息lll */
+	/* 获取所有用户信息hhh */
 	@RequestMapping("/getUserInfo")
 	public void getUserInfo(HttpServletRequest request, Model model, HttpServletResponse response,
 			HttpSession session) {
