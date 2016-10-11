@@ -67,14 +67,10 @@ public class MessageController {
 			/*
 			 * if (session.getAttribute("login") == null) { return "login"; }
 			 */
-			String admId = request.getParameter("admId");
-			if (admId != null && !"".equals(admId)) {
+			List<Message> messageList = this.messageService.getMsgList();
+			if (messageList != null) {
+				response.getOutputStream().write(JSON.toJSONString(messageList).getBytes("utf-8"));
 
-				List<Message> messageList = this.messageService.getMsgListById(admId);
-				if (messageList != null) {
-					response.getOutputStream().write(JSON.toJSONString(messageList).getBytes("utf-8"));
-
-				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -42,8 +42,8 @@ public class MessageService implements IMessageService {
 	}
 
 	@Override
-	public List<Message> getMsgListById(String id) {
-		return messageDao.selectMsgListById(id);
+	public List<Message> getMsgList() {
+		return messageDao.selectMsgList();
 	}
 
 }

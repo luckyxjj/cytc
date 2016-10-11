@@ -19,6 +19,6 @@ public interface MessageMapper {
 
 	List<Message> selectBySendIdAndReceId(Message message);
 
-	List<Message> selectMsgListById(String id);
+	List<Message> selectMsgList();
 
 }

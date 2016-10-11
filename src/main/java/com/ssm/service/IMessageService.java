@@ -15,6 +15,6 @@ public interface IMessageService {
 
 	public List<Message> getBySendIdAndReceId(Message message);
 
-	public List<Message> getMsgListById(String id);
+	public List<Message> getMsgList();
 
 }
