@@ -56,7 +56,7 @@ public class MessageController {
 		}
 	}
 
-	/* 通过admId获取留言列表 */
+	/* 获取留言列表 */
 	@RequestMapping("/getMessageList")
 	public void getMessageList(HttpServletRequest request, Model model, HttpServletResponse response,
 			HttpSession session) {
