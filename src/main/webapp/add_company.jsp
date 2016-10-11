@@ -23,17 +23,17 @@
 <title>后台管理系统</title>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="col-lg-12 nav-bg bg-primary">
+	<div class="col-lg-12 nav-bg bg-primary">
 			<div class="col-lg-11">
 				<h2 class="top-title">后台管理系统</h2>
 			</div>
 			<div class="col-lg-1 back-index">
-				<a href="teacher/logout">注销</a>
-			</div>
+				<a href="login/logout">注销</a>
+			</div>	
 		</div>
+		
 		<div class="left-bg col-lg-3">
-			<div class="panel-group ">
+			<div class="panel-group " >
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h4 class="panel-title">
@@ -42,22 +42,64 @@
 					</div>
 				</div>
 			</div>
-			<div class="panel-group ">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a role="button" href="production/getProduction">作品 </a>
-						</h4>
-					</div>
-				</div>
-			</div>
+			
 			<div class="panel-group " >
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h4 class="panel-title">
-							<a role="button" href="company/getCompany">公司信息 </a>
+							<a role="button" href="about/getAbout">关于创艺</a>
 						</h4>
-					</div>					
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="business/getBusiness">业务范围</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="environment/getEnvironment">工作环境</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="company/getCompany">公司信息</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="production/getProduction">作品管理</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="admin/getAdmin">管理员</a>
+						</h4>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -87,8 +129,7 @@
 					<label class="col-lg-2 text-right">传真： </label>
 					<div class="col-lg-8">
 						<input type="text" name="fax" class="form-control"
-							placeholder="请输入传真" required
-							data-bv-notempty-message="传真不能为空" maxlength="20"
+							placeholder="请输入传真"  maxlength="20"
 							data-bv-stringlength-message="长度不能超过20个字符" />
 					</div>
 				</div>
@@ -114,8 +155,7 @@
 					<label class="col-lg-2 text-right">邮箱： </label>
 					<div class="col-lg-8">
 						<input type="text" name="mail" class="form-control"
-							placeholder="请输入邮箱" required
-							data-bv-notempty-message="邮箱不能为空" maxlength="20"
+							placeholder="请输入邮箱"  maxlength="20"
 							data-bv-stringlength-message="长度不能超过20个字符" />
 					</div>
 				</div>
@@ -148,8 +188,7 @@
 				<div class="form-group">
 					<label class="col-lg-2 text-right">公司形象图片： </label>
 					<div class="col-lg-9">
-						<input type="file" name="imagePhotoFile" required
-							data-bv-notempty-message="公司形象图片不能为空" maxlength="80"
+						<input type="file" name="imagePhotoFile"  maxlength="80"
 							data-bv-stringlength-message="长度不能超过80个字符" />
 					</div>
 				</div>

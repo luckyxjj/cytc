@@ -1,4 +1,4 @@
-/*删除主页图片*/
+/*删除主页轮播图片*/
 function deleteHomeImg(id) {
 	$.post("homeImg/deleteHomeImg", {
 		"id" : id
@@ -14,6 +14,75 @@ function deleteHomeImg(id) {
 		}
 	});
 }
+
+/*删除关于创艺的描述*/
+function deleteAbout(id) {
+	$.post("about/deleteAbout", {
+		"id" : id
+	}, function(data, status) {
+		if (status == "success") {
+			if (data == "请先登入") {
+				window.location.href = "login.jsp";
+			} else {
+				window.location.reload();
+			}
+		} else {
+			alert("获取失败，请重试");
+		}
+	});
+}
+
+/*删除管理员*/
+function deleteAdmin(id) {
+	$.post("admin/deleteAdmin", {
+		"id" : id
+	}, function(data, status) {
+		if (status == "success") {
+			if (data == "请先登入") {
+				window.location.href = "login.jsp";
+			} else {
+				window.location.reload();
+			}
+		} else {
+			alert("获取失败，请重试");
+		}
+	});
+}
+
+/*删除业务范围*/
+function deleteBusiness(id) {
+	$.post("business/deleteBusiness", {
+		"id" : id
+	}, function(data, status) {
+		if (status == "success") {
+			if (data == "请先登入") {
+				window.location.href = "login.jsp";
+			} else {
+				window.location.reload();
+			}
+		} else {
+			alert("获取失败，请重试");
+		}
+	});
+}
+
+/*删除工作环境*/
+function deleteEnvironment(id) {
+	$.post("environment/deleteEnvironment", {
+		"id" : id
+	}, function(data, status) {
+		if (status == "success") {
+			if (data == "请先登入") {
+				window.location.href = "login.jsp";
+			} else {
+				window.location.reload();
+			}
+		} else {
+			alert("获取失败，请重试");
+		}
+	});
+}
+
 /* 删除产品 */
 function deleteProduction(id) {
 	$.post("production/deleteProduction", {
@@ -74,3 +143,12 @@ $(document)
 									});
 
 				});
+
+
+
+
+
+
+
+
+

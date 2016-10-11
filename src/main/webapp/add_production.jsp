@@ -29,11 +29,12 @@
 				<h2 class="top-title">后台管理系统</h2>
 			</div>
 			<div class="col-lg-1 back-index">
-				<a href="teacher/logout">注销</a>
-			</div>
+				<a href="login/logout">注销</a>
+			</div>	
 		</div>
+		
 		<div class="left-bg col-lg-3">
-			<div class="panel-group ">
+			<div class="panel-group " >
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h4 class="panel-title">
@@ -42,22 +43,64 @@
 					</div>
 				</div>
 			</div>
-			<div class="panel-group ">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a role="button" href="production/getProduction">作品 </a>
-						</h4>
-					</div>
-				</div>
-			</div>
+			
 			<div class="panel-group " >
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h4 class="panel-title">
-							<a role="button" href="company/getCompany">公司信息 </a>
+							<a role="button" href="about/getAbout">关于创艺</a>
 						</h4>
-					</div>					
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="business/getBusiness">业务范围</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="environment/getEnvironment">工作环境</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="company/getCompany">公司信息</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="production/getProduction">作品管理</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel-group " >
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a role="button" href="admin/getAdmin">管理员</a>
+						</h4>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -69,7 +112,7 @@
 					<label class="col-lg-2 text-right">作品描述： </label>
 					<div class="col-lg-9">
 						<textarea type="text" name="description" rows="2" cols="20"
-							class="form-control" required data-bv-notempty-message="作品描述不能为空"
+							class="form-control" 
 							maxlength="200" data-bv-stringlength-message="长度不能超过200个字符"></textarea>
 					</div>
 				</div>
