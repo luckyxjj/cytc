@@ -1,0 +1,73 @@
+@charset "utf-8";
+body {
+	background-color: #000000;
+	padding-bottom: 170px;
+	padding-top: 30px;
+	padding-right: 10px;
+	padding-left: 15px;
+}
+
+.message_login {
+	background-image: url(../img/message_img.png);
+}
+
+.nav1 {
+	background-color: #000000 !important;
+}
+
+.ul_navigation {
+	-webkit-margin-after: 8em !important;
+}
+
+.index_hp {
+	padding-top: 20px;
+}
+
+.index_div{
+	padding-right: 0px;
+}
+
+.about_cy {
+	font-family: "微软雅黑";
+	font-size: 500%;
+	color: white;
+}
+
+.about_font {
+	font-family: "仿宋";
+	font-size: 300%;
+	color: white;
+}
+
+.company {
+	font-family: "微软雅黑";
+	font-size: 350%;
+	color: white;
+}
+
+.connectus_line {
+	height: 5px;
+	border: none;
+	border-top: 5px ridge white;
+}
+
+.connectus_head {
+	padding-top: 10px;
+}
+
+.login {
+	height: 80px;
+}
+
+.login_word {
+	height: 100px !important;
+}
+
+.login_img {
+	width: 60px;
+}
+.dl{
+	font-family: "仿宋";
+	font-size: 250%;
+	color: white;
+}

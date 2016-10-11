@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--留言登录-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.12.3.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<link rel="stylesheet " href="css/bootstrap.css">
+		<link rel="stylesheet " href="css/phone_size.css" type="text/css"/>
+		<script src="js/message_login.js"></script>
+	</head>
+	<body class="message_login">
+		
+		<div class="container-fluid">
+		<!-- <form method="post" action="login/userLoginValidate" class="form-horizontal"> -->
+			<div class="row">
+				<div class="col-xs-12">
+					<font class="about_cy">留言登录</font>
+				</div>
+			</div>
+			<br />
+			<br/>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="input-group input-group-lg">
+						<div class="input-group-addon">
+							<span class="glyphicon glyphicon-user login_img"></span>
+						</div>
+						<input type="text" class="form-control login_word" placeholder="用户名" name="userName" id="userName">
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="input-group input-group-lg">
+						<div class="input-group-addon">
+							<span class="glyphicon glyphicon-lock login_img"></span>
+						</div>
+						<input type="text" class="form-control login_word" placeholder="密码" name="password" id="password">
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="radio">
+						<label style="margin-right: 40px;"> <input type="radio" checked="checked" name="role" value="user" id="user"/>
+							<font class="about_font">普通用户</font>
+						</label>
+						<label> <input type="radio" name="role" value="admin" id="admin"/>
+							<font class="about_font">管理员</font>
+						</label>
+					</div>
+					
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-xs-12">
+					<button type="submit" class="btn btn-defualt btn-block btn-lg login" onclick="message_login()">登录</button>
+					
+				</div>
+			</div>
+			<!-- </form> -->
+		</div>
+		
+		<!--底部导航-->
+	<nav class="navbar navbar-default navbar-fixed-bottom nav1"
+		role="navigation">
+		<div class="container-fluid index_navigation ">
+			<div class="collapse navbar-collapse ">
+				<ul class="nav navbar-nav ul_navigation">
+					<li><a
+						href="business.html"
+						class="navbar-brand "> <img src="img/business_s.png"
+							class="img-responsive img-rounded">
+					</a></li>
+					<li><a href="" class="navbar-brand "> <img
+							src="img/activity_s.png " class="img-responsive img-rounded">
+					</a></li>
+					<li><a href="http://a.eqxiu.com/s/0sGiCsgP?eqrcode=1"
+						class="navbar-brand "> <img src="img/job_s.png "
+							class="img-responsive img-rounded">
+					</a></li>
+					<li><a href="environment.html" class="navbar-brand "> <img
+							src="img/space_s.png" class="img-responsive img-rounded">
+					</a></li>
+					<li><a href="message_login.html" class="navbar-brand"> <img
+							src="img/message_s.png " class="img-responsive img-rounded">
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+		
+	</body>
+</html>

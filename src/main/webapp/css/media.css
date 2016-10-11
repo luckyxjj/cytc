@@ -1,0 +1,147 @@
+.img1(indexlb_one),.img2(indexlb_two),.img3{indexlb_three
+				width: 980px;
+				height: 550px;
+			}
+			.img4(index_hp){
+				width: 480px;
+				height: 550px;
+			}
+			.img5(index_bisiness),.img6(index_place),.img7(index_works),.img8(index_ca){
+				width: 215px;
+				height: 275px;
+			}
+			.img9(index_about){
+				height: 400px;
+				width: 300px;
+			}
+			.img10(index_job),.img11(index_relation),.img12(index_map),.img13(index_message),.img14(index_activity){
+				width: 175px;
+				height: 100px;
+			}
+			index_navigation{
+				height: 140px;
+			}
+/*index*/
+
+.img15(about_fifteen),.img16(about_sixteen),.img17(about_seventeen){
+				height: 500px;
+				width: 800px;
+			}
+			.about_cy(about_cy){
+				font-family: "微软雅黑";
+				font-size: 500%;
+			}
+			.font2(about_times),.font3(about_introduce),.font4(about_content),.font5(about_culture),.font6(about_cc),.font7(about_hp){
+				font-family: "仿宋";
+				font-size: 300%;
+			}
+			.img10(index_job),.img11(index_relation),.img12(index_map),.img13(index_message),.img14(index_activity){
+				width: 175px;
+				height: 100px;
+			}
+			.div1(index_navigation){
+				height: 140px;
+			}
+/*about*/
+
+.font1(about_cy){
+				font-family: "微软雅黑";
+				font-size: 500%;
+			}
+			.font2(about_times),.font7(about_hp){
+				font-family: "仿宋";
+				font-size: 300%;
+			}
+			.font8(company_name),.font9(company_address),.font10(company_phone),.font11(company_qq),.font12(company_email){
+				font-family: "微软雅黑";
+				font-size: 350%;
+			}
+			.img18(connectus_head){
+				height: 300px;
+				width: 780px;
+			}
+			.hr1(connectus_line){
+				height:5px;
+				border:none;
+				border-top:5px 
+				ridge green;
+			}
+			.img10(index_job),.img11(index_relation),.img12(index_map),.img13(index_message),.img14(index_activity){
+				width: 175px;
+				height: 100px;
+			}
+			.div1(index_navigation){
+				height: 140px;
+			}
+/*ConnectUs*/
+
+.font1(about_cy){
+				font-family: "微软雅黑";
+				font-size: 500%;
+			}
+			.img10(index_job),.img11(index_relation),.img12(index_map),.img13(index_message),.img14(index_activity){
+				width: 175px;
+				height: 100px;
+			}
+			.i1(login_username),.i2(login_password){
+				height: 100px !important;
+				
+			}
+			.span1(login_uimg),.span2(login_pimg){
+				width: 60px;
+			}
+			.div1(index_navigation){
+				height: 140px;
+			}
+			.img18(connectus_head){
+				height: 300px;
+				width: 780px;
+			}
+			.hr1(connectus_line){
+				height:5px;
+				border:none;
+				border-top:5px 
+				ridge green;
+			}
+/*message_login*/
+
+.font1(about_cy){
+				font-family: "微软雅黑";
+				font-size: 500%;
+			}
+			.font2(about_times),.font7(about_hp){
+				font-family: "仿宋";
+				font-size: 300%;
+			}
+			.img18(connectus_head){
+				height: 300px;
+				width: 780px;
+			}
+			.hr1(connectus_line){
+				height:5px;
+				border:none;
+				border-top:5px 
+				ridge green;
+			}
+/*message*/
+
+.img10(index_job),.img11(index_relation),.img12(index_map),.img13(index_message),.img14(index_activity){
+				width: 175px;
+				height: 100px;
+			}
+			.div1(index_navigation){
+				height: 140px;
+			}
+			.img15(workspace_img),.img16(workspace_img),.img17(workspace_img){
+				height: 500px;
+				width: 800px;
+			}
+			.font1(about_cy){
+				font-family: "微软雅黑";
+				font-size: 500%;
+			}
+			.font2(about_times),.font7(about_hp){
+				font-family: "仿宋";
+				font-size: 300%;
+			}
+/*work_e*/
