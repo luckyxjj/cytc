@@ -68,7 +68,7 @@ public class MessageController {
 			 * if (session.getAttribute("login") == null) { return "login"; }
 			 */
 			String admId = request.getParameter("admId");
-			if (admId == null && !"".equals(admId)) {
+			if (admId != null && !"".equals(admId)) {
 
 				List<Message> messageList = this.messageService.getMsgListById(admId);
 				if (messageList != null) {
