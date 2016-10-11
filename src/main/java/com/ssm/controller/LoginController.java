@@ -31,7 +31,7 @@ public class LoginController {
 	DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	String time = format.format(new Date());
 
-	/* 管理员登入 */
+	/* 管理员后台登入 */
 	@RequestMapping("/adminLoginValidate")
 	public String adminLoginValidate(HttpServletRequest request, Model model, HttpServletResponse response,
 			HttpSession session) {
@@ -63,10 +63,39 @@ public class LoginController {
 		return "login";
 	}
 
+	/* 管理员前台登入 */
+	@RequestMapping("/adminLoginValidate2")
+	public void adminLoginValidate2(HttpServletRequest request, Model model, HttpServletResponse response,
+			HttpSession session) {
+		response.setContentType("text/html; charset=utf-8");
+		response.setCharacterEncoding("utf-8");
+		try {
+			/*
+			 * if (session.getAttribute("login") == null) { return "login"; }
+			 */
+			String userName = request.getParameter("userName");
+			String password = request.getParameter("password");
+			Admin admin = new Admin();
+			admin.setUserName(userName);
+			admin.setPassword(password);
+			int id = this.adminService.loginValidate(admin);
+			if (id > 0) {
+				response.getOutputStream().write("登入成功".getBytes("utf-8"));
+			} else {
+				response.getOutputStream().write("用户名或密码错误，请重新输入！".getBytes("utf-8"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
 	/* 用户登入 */
 	@RequestMapping("/userLoginValidate")
 	public void userLoginValidate(HttpServletRequest request, Model model, HttpServletResponse response,
 			HttpSession session) {
+		response.setContentType("text/html; charset=utf-8");
 		response.setCharacterEncoding("utf-8");
 		try {
 			/*
