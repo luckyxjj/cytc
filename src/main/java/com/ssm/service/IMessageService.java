@@ -17,4 +17,8 @@ public interface IMessageService {
 
 	public List<Message> getMsgList();
 
+	public int getUnreadNum(String userNo);
+
+	public int updateFlag(String userNo);
+
 }

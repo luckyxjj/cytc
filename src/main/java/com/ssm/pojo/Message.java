@@ -1,73 +1,83 @@
 package com.ssm.pojo;
 
 public class Message {
-    private Integer id;
+	private Integer id;
 
-    private String sendNo;
+	private String sendNo;
 
-    private String receiverNo;
+	private String receiverNo;
 
-    private String content;
+	private String content;
 
-    private String flag;
+	private String flag;
 
-    private String createTime;
+	private String createTime;
 
-    private String updateTime;
+	private String updateTime;
 
-    public Integer getId() {
-        return id;
-    }
+	private int unreadNum;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public int getUnreadNum() {
+		return unreadNum;
+	}
 
-    public String getSendNo() {
-        return sendNo;
-    }
+	public void setUnreadNum(int unreadNum) {
+		this.unreadNum = unreadNum;
+	}
 
-    public void setSendNo(String sendNo) {
-        this.sendNo = sendNo == null ? null : sendNo.trim();
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public String getReceiverNo() {
-        return receiverNo;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setReceiverNo(String receiverNo) {
-        this.receiverNo = receiverNo == null ? null : receiverNo.trim();
-    }
+	public String getSendNo() {
+		return sendNo;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public void setSendNo(String sendNo) {
+		this.sendNo = sendNo == null ? null : sendNo.trim();
+	}
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
+	public String getReceiverNo() {
+		return receiverNo;
+	}
 
-    public String getFlag() {
-        return flag;
-    }
+	public void setReceiverNo(String receiverNo) {
+		this.receiverNo = receiverNo == null ? null : receiverNo.trim();
+	}
 
-    public void setFlag(String flag) {
-        this.flag = flag == null ? null : flag.trim();
-    }
+	public String getContent() {
+		return content;
+	}
 
-    public String getCreateTime() {
-        return createTime;
-    }
+	public void setContent(String content) {
+		this.content = content == null ? null : content.trim();
+	}
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime == null ? null : createTime.trim();
-    }
+	public String getFlag() {
+		return flag;
+	}
 
-    public String getUpdateTime() {
-        return updateTime;
-    }
+	public void setFlag(String flag) {
+		this.flag = flag == null ? null : flag.trim();
+	}
 
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime == null ? null : updateTime.trim();
-    }
+	public String getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime == null ? null : createTime.trim();
+	}
+
+	public String getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime == null ? null : updateTime.trim();
+	}
 }

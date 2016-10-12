@@ -21,4 +21,8 @@ public interface MessageMapper {
 
 	List<Message> selectMsgList();
 
+	int selectUnreadNum(String userNo);
+
+	int updateFlag(String userNo);
+
 }

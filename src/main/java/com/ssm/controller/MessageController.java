@@ -29,7 +29,7 @@ public class MessageController {
 	DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	String time = format.format(new Date());
 
-	/* 通过sendNo和receiverNo获取留言信息 */
+	/* 用户通过sendNo和receiverNo获取留言信息 */
 	@RequestMapping("/getMessage")
 	public void getMessage(HttpServletRequest request, Model model, HttpServletResponse response, HttpSession session) {
 		// 设置服务器端响应的编码格式
@@ -56,6 +56,36 @@ public class MessageController {
 		}
 	}
 
+	/* 管理员通过sendNo和receiverNo获取留言信息 */
+	@RequestMapping("/getMessageAdm")
+	public void getMessageAdm(HttpServletRequest request, Model model, HttpServletResponse response,
+			HttpSession session) {
+		// 设置服务器端响应的编码格式
+		response.setContentType("application/json;charset=utf-8");
+		response.setCharacterEncoding("utf-8");
+		try {
+			/*
+			 * if (session.getAttribute("login") == null) { return "login"; }
+			 */
+			String sendNo = request.getParameter("sendNo");
+			String receiverNo = request.getParameter("receiverNo");
+			if (sendNo != null && receiverNo != null) {
+				Message message = new Message();
+				message.setSendNo(sendNo);
+				message.setReceiverNo(receiverNo);
+				message.setFlag("T");
+				this.messageService.updateFlag(receiverNo);
+				List<Message> messageList = this.messageService.getBySendIdAndReceId(message);
+				if (messageList.size() > 0) {
+					response.getOutputStream().write(JSON.toJSONString(messageList).getBytes("utf-8"));
+
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	/* 获取留言列表 */
 	@RequestMapping("/getMessageList")
 	public void getMessageList(HttpServletRequest request, Model model, HttpServletResponse response,
@@ -67,19 +97,69 @@ public class MessageController {
 			/*
 			 * if (session.getAttribute("login") == null) { return "login"; }
 			 */
-			List<Message> messageList = this.messageService.getMsgList();
-			if (messageList != null) {
-				response.getOutputStream().write(JSON.toJSONString(messageList).getBytes("utf-8"));
+			String admId = request.getParameter("admId");
+			if (admId != null && !"".equals(admId)) {
+				List<Message> messageList = this.messageService.getMsgList();
+				if (messageList.size() > 0) {
+					// 获取列表中每一项的未读消息数
+					for (Message message : messageList) {
+						String uNo = "";
+						if (message.getSendNo().equals(admId)) {
+							uNo = message.getReceiverNo();
+						} else {
+							uNo = message.getSendNo();
+						}
+						int num = this.messageService.getUnreadNum(uNo);
+						message.setUnreadNum(num);
 
+					}
+					response.getOutputStream().write(JSON.toJSONString(messageList).getBytes("utf-8"));
+
+				}
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	/* 添加留言 */
+	/* 用户添加留言 */
 	@RequestMapping("/addMessage")
 	public void addMessage(HttpServletRequest request, Model model, HttpServletResponse response, HttpSession session) {
+		// 设置服务器端响应的编码格式
+		response.setContentType("application/json;charset=utf-8");
+		response.setCharacterEncoding("utf-8");
+
+		try {
+			/*
+			 * if (session.getAttribute("login") == null) { return "login"; }
+			 */
+			String sendNo = request.getParameter("sendNo");
+			String receiverNo = request.getParameter("receiverNo");
+			String content = request.getParameter("content");
+			Message message = new Message();
+			message.setSendNo(sendNo);
+			message.setReceiverNo(receiverNo);
+			message.setContent(content);
+			message.setCreateTime(time);
+			message.setFlag("F");
+
+			int code = this.messageService.addMessage(message);
+			if (code > 0) {
+				response.getOutputStream().write("添加成功".getBytes("utf-8"));
+			} else {
+				response.getOutputStream().write("添加失败".getBytes("utf-8"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/* 管理员添加留言 */
+	@RequestMapping("/addMessageAdm")
+	public void addMessageAdm(HttpServletRequest request, Model model, HttpServletResponse response,
+			HttpSession session) {
 		// 设置服务器端响应的编码格式
 		response.setContentType("application/json;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
@@ -99,7 +179,7 @@ public class MessageController {
 
 			int code = this.messageService.addMessage(message);
 			if (code > 0) {
-				response.getOutputStream().write(JSON.toJSONString(message).getBytes());
+				response.getOutputStream().write("添加成功".getBytes("utf-8"));
 			} else {
 				response.getOutputStream().write("添加失败".getBytes("utf-8"));
 			}

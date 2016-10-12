@@ -46,4 +46,14 @@ public class MessageService implements IMessageService {
 		return messageDao.selectMsgList();
 	}
 
+	@Override
+	public int getUnreadNum(String userNo) {
+		return messageDao.selectUnreadNum(userNo);
+	}
+
+	@Override
+	public int updateFlag(String userNo) {
+		return messageDao.updateFlag(userNo);
+	}
+
 }

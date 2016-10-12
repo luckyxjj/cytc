@@ -67,6 +67,13 @@
 		where send_no=W.send_no and receiver_no=W.receiver_no or
 		send_no=w.receiver_no and receiver_no=W.send_no) order by id desc;
 	</select>
+	<!-- 通过用户no获取未读消息数 -->
+	<select
+		id="selectUnreadNum"
+		resultType="java.lang.Integer"
+		parameterType="java.lang.String"> select count(id) from tb_message where send_no =
+		#{userNo,jdbcType=VARCHAR} and flag = 'F'
+	</select>
 	<delete
 		id="deleteByPrimaryKey"
 		parameterType="java.lang.Integer"> delete from tb_message where id =
@@ -152,5 +159,11 @@
 		flag = #{flag,jdbcType=VARCHAR}, create_time =
 		#{createTime,jdbcType=VARCHAR}, update_time =
 		#{updateTime,jdbcType=VARCHAR} where id = #{id,jdbcType=INTEGER}
+	</update>
+	<!-- 修改未读状态 -->
+	<update
+		id="updateFlag"
+		parameterType="java.lang.String"> 
+		update tb_message set flag='T' where send_no=#{userNo,jdbcType=VARCHAR}
 	</update>
 </mapper>
