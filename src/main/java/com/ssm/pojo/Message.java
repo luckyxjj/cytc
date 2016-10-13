@@ -1,5 +1,7 @@
 package com.ssm.pojo;
 
+import java.util.List;
+
 public class Message {
 	private Integer id;
 
@@ -16,6 +18,26 @@ public class Message {
 	private String updateTime;
 
 	private int unreadNum;
+
+	private List<Integer> unreadId;
+
+	private int[] unId;
+
+	public int[] getUnId() {
+		return unId;
+	}
+
+	public void setUnId(int[] unId) {
+		this.unId = unId;
+	}
+
+	public List<Integer> getUnreadId() {
+		return unreadId;
+	}
+
+	public void setUnreadId(List<Integer> unreadId) {
+		this.unreadId = unreadId;
+	}
 
 	public int getUnreadNum() {
 		return unreadNum;

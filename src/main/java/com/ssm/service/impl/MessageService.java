@@ -47,13 +47,13 @@ public class MessageService implements IMessageService {
 	}
 
 	@Override
-	public int getUnreadNum(String userNo) {
+	public List<Integer> getUnreadNum(String userNo) {
 		return messageDao.selectUnreadNum(userNo);
 	}
 
 	@Override
-	public int updateFlag(String userNo) {
-		return messageDao.updateFlag(userNo);
+	public int updateFlag(Message message) {
+		return messageDao.updateFlag(message);
 	}
 
 }

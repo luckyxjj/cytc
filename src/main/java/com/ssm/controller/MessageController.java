@@ -26,7 +26,7 @@ public class MessageController {
 	private IMessageService messageService;
 
 	// 获取当前时间
-	DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+	DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	String time = format.format(new Date());
 
 	/* 用户通过sendNo和receiverNo获取留言信息 */
@@ -69,12 +69,28 @@ public class MessageController {
 			 */
 			String sendNo = request.getParameter("sendNo");
 			String receiverNo = request.getParameter("receiverNo");
+			String unreadId = request.getParameter("unreadId");
+
 			if (sendNo != null && receiverNo != null) {
+				// 修改未读状态
+				if (unreadId != null) {
+					String[] unreadArray = unreadId.split(",");
+					int[] un = new int[unreadArray.length];
+					for (int j = 0; j < unreadArray.length; j++) {
+						un[j] = Integer.parseInt(unreadArray[j]);
+					}
+					Message message = new Message();
+					message.setUnId(un);
+					message.setSendNo(receiverNo);
+					message.setUpdateTime(time);
+					this.messageService.updateFlag(message);
+				}
+
 				Message message = new Message();
 				message.setSendNo(sendNo);
 				message.setReceiverNo(receiverNo);
 				message.setFlag("T");
-				this.messageService.updateFlag(receiverNo);
+
 				List<Message> messageList = this.messageService.getBySendIdAndReceId(message);
 				if (messageList.size() > 0) {
 					response.getOutputStream().write(JSON.toJSONString(messageList).getBytes("utf-8"));
@@ -109,8 +125,9 @@ public class MessageController {
 						} else {
 							uNo = message.getSendNo();
 						}
-						int num = this.messageService.getUnreadNum(uNo);
-						message.setUnreadNum(num);
+						List<Integer> unreadId = this.messageService.getUnreadNum(uNo);
+						message.setUnreadId(unreadId);
+						message.setUnreadNum(unreadId.size());
 
 					}
 					response.getOutputStream().write(JSON.toJSONString(messageList).getBytes("utf-8"));

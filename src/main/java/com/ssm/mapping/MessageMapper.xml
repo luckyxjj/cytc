@@ -67,11 +67,11 @@
 		where send_no=W.send_no and receiver_no=W.receiver_no or
 		send_no=w.receiver_no and receiver_no=W.send_no) order by id desc;
 	</select>
-	<!-- 通过用户no获取未读消息数 -->
+	<!-- 通过用户no获取未读消息的id -->
 	<select
 		id="selectUnreadNum"
 		resultType="java.lang.Integer"
-		parameterType="java.lang.String"> select count(id) from tb_message where send_no =
+		parameterType="java.lang.String"> select id from tb_message where send_no =
 		#{userNo,jdbcType=VARCHAR} and flag = 'F'
 	</select>
 	<delete
@@ -163,7 +163,18 @@
 	<!-- 修改未读状态 -->
 	<update
 		id="updateFlag"
-		parameterType="java.lang.String"> 
-		update tb_message set flag='T' where send_no=#{userNo,jdbcType=VARCHAR}
+		parameterType="com.ssm.pojo.Message">
+		<!-- update tb_message set flag='T' where send_no=#{userNo,jdbcType=VARCHAR} -->
+		update tb_message set flag='T',update_time =
+		#{updateTime,jdbcType=VARCHAR} where
+		send_no=#{sendNo,jdbcType=VARCHAR} and id in
+		<foreach
+			item="item"
+			index="index"
+			collection="unId"
+			open="("
+			separator=","
+			close=")"> #{item}
+		</foreach>
 	</update>
 </mapper>
