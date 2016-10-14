@@ -2,7 +2,9 @@
  * 
  */
 function message_login(){
-	if($("#uer:checked")){
+	
+	if($('#user:checked').val()=="user"){
+		
 	var userName = $("#userName").val();
 	var password = $("#password").val();
 	
@@ -13,12 +15,14 @@ function message_login(){
 			alert("用户名或者密码错误！");
 		}
 		});
-	}else if($("#admin:checked")){
+	}else if($('#admin:checked').val()=="admin"){
+		
 		var userName = $("#userName").val();
 		var password = $("#password").val();
 		
-		$.post("",{userName:userName,password:password},function(data,stutas){
+		$.post("login/adminLoginValidate2",{userName:userName,password:password},function(data,stutas){
 			if(data=="登入成功"){
+				
 				window.location.href="admin_message.html?user="+userName;
 			}else{
 				alert("用户名或者密码错误！");
@@ -26,3 +30,5 @@ function message_login(){
 			});
 	}
 }
+
+
