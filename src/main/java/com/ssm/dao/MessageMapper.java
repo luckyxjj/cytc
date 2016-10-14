@@ -19,6 +19,10 @@ public interface MessageMapper {
 
 	List<Message> selectBySendIdAndReceId(Message message);
 
-	List<Message> selectMsgListById(String id);
+	List<Message> selectMsgList();
+
+	List<Integer> selectUnreadNum(String userNo);
+
+	int updateFlag(Message message);
 
 }

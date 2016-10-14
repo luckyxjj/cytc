@@ -1,73 +1,105 @@
 package com.ssm.pojo;
 
+import java.util.List;
+
 public class Message {
-    private Integer id;
+	private Integer id;
 
-    private String sendNo;
+	private String sendNo;
 
-    private String receiverNo;
+	private String receiverNo;
 
-    private String content;
+	private String content;
 
-    private String flag;
+	private String flag;
 
-    private String createTime;
+	private String createTime;
 
-    private String updateTime;
+	private String updateTime;
 
-    public Integer getId() {
-        return id;
-    }
+	private int unreadNum;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private List<Integer> unreadId;
 
-    public String getSendNo() {
-        return sendNo;
-    }
+	private int[] unId;
 
-    public void setSendNo(String sendNo) {
-        this.sendNo = sendNo == null ? null : sendNo.trim();
-    }
+	public int[] getUnId() {
+		return unId;
+	}
 
-    public String getReceiverNo() {
-        return receiverNo;
-    }
+	public void setUnId(int[] unId) {
+		this.unId = unId;
+	}
 
-    public void setReceiverNo(String receiverNo) {
-        this.receiverNo = receiverNo == null ? null : receiverNo.trim();
-    }
+	public List<Integer> getUnreadId() {
+		return unreadId;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public void setUnreadId(List<Integer> unreadId) {
+		this.unreadId = unreadId;
+	}
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
+	public int getUnreadNum() {
+		return unreadNum;
+	}
 
-    public String getFlag() {
-        return flag;
-    }
+	public void setUnreadNum(int unreadNum) {
+		this.unreadNum = unreadNum;
+	}
 
-    public void setFlag(String flag) {
-        this.flag = flag == null ? null : flag.trim();
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public String getCreateTime() {
-        return createTime;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime == null ? null : createTime.trim();
-    }
+	public String getSendNo() {
+		return sendNo;
+	}
 
-    public String getUpdateTime() {
-        return updateTime;
-    }
+	public void setSendNo(String sendNo) {
+		this.sendNo = sendNo == null ? null : sendNo.trim();
+	}
 
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime == null ? null : updateTime.trim();
-    }
+	public String getReceiverNo() {
+		return receiverNo;
+	}
+
+	public void setReceiverNo(String receiverNo) {
+		this.receiverNo = receiverNo == null ? null : receiverNo.trim();
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content == null ? null : content.trim();
+	}
+
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag == null ? null : flag.trim();
+	}
+
+	public String getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime == null ? null : createTime.trim();
+	}
+
+	public String getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime == null ? null : updateTime.trim();
+	}
 }
