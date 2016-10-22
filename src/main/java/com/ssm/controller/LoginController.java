@@ -1,5 +1,6 @@
 package com.ssm.controller;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -123,5 +124,16 @@ public class LoginController {
 		}
 
 	}
+	// 注销
+			@RequestMapping("/logout")
+			public String logout(HttpServletRequest request, Model model, HttpServletResponse response, HttpSession session)
+					throws IOException {
+				// 允许跨域请求
+				response.setHeader("Access-Control-Allow-Origin", "*");
+				response.setContentType("text/html;charset=utf-8");
+				response.setCharacterEncoding("utf-8");
+				session.invalidate();
+				return "login";
+			}
 
 }

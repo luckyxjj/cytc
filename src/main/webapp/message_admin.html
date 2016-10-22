@@ -8,14 +8,14 @@
 		<script src="js/bootstrap.js"></script>
 		<link rel="stylesheet " href="css/bootstrap.css">
 		<link rel="stylesheet " href="css/phone_size.css" type="text/css"/>
-	    <script src="js/admin_message.js"></script> 
+		<script src="js/message_admin.js"></script>
 	</head>
 	<body class="message_login">
 		<br />
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-10 col-xs-offset-1">
-					<font class="about_cy">留言板</font>
+					<font class="about_cy">留言回复</font>
 				</div>
 			</div>
 			<br/>
@@ -25,7 +25,7 @@
 				</div>
 				<div class="col-xs-3">
 					<a href="">
-						<font class="about_font">首页</font>
+						<font class="about_font">返回</font>
 					</a>
 				</div>
 			</div>
@@ -41,19 +41,28 @@
 		<br />
 		<br />
 		
-		
 		<div class="container-fluid" id="message">
-			
-		</div> 
+			<!-- <div class="row">
+				<div class="col-xs-10 col-xs-offset-1">
+					<p class="about_font"></p>
+					<p class="about_font" align="right" id="send">留言</p>
+				</div>
+			</div> -->
+		</div>
 		
+		<div class="container-fluid" id="message_send">
+			<!-- <div class="row">
+				<div class="col-xs-10 col-xs-offset-1">
+					<p class="about_font"></p>
+					<p class="about_font" align="right" id="send">留言</p>
+				</div>
+			</div> -->
+		</div>
 		
-		<br/>
-		
-		
-		<!-- <div class="container-fluid">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-10 col-xs-offset-1">
-					<textarea class="form-control" rows="10" placeholder="请回复" id="message_text"></textarea>
+					<textarea class="form-control" rows="10" placeholder="请填写回复" id="message_text"></textarea>
 				</div>
 			</div>
 			<br/>
@@ -61,10 +70,10 @@
 			
 			<div class="row">
 				<div class="col-xs-10 col-xs-offset-1">
-					<button type="button" class="btn btn-default" onclick="message();">提交回复</button>
+					<button type="button" class="btn btn-default" onclick="message();">回复</button>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		
 		<!--底部导航-->
 	<nav class="navbar navbar-default navbar-fixed-bottom nav1"
