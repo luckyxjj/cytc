@@ -73,7 +73,7 @@ public class MessageController {
 
 			if (sendNo != null && receiverNo != null) {
 				// 修改未读状态
-				if (unreadId != null) {
+				if (unreadId != null && !"".equals(unreadId)) {
 					String[] unreadArray = unreadId.split(",");
 					int[] un = new int[unreadArray.length];
 					for (int j = 0; j < unreadArray.length; j++) {
