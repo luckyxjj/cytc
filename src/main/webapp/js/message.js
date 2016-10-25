@@ -10,7 +10,7 @@ $(function(){
 	
 	$.post("message/getMessage",{sendNo:sendNo,receiverNo:0},function(data,status){
 		for(var i=0;i<data.length;i++){
-			if(arrHref[1]==data[i].sendNo){
+			if(sendNo==data[i].sendNo){
 				$("#message").append(
 						"<div class='row'>"+
 						"<div class='col-xs-10 col-xs-offset-1' align='right'>"+
@@ -47,24 +47,29 @@ function message(){
 	if(text==""){
 		alert("请输入留言信息");
 	}else{$.post("message/addMessage",{sendNo:sendNo,receiverNo:0,content:text},function(data,status){
-		if(data=="添加失败"){
-			alert("留言失败");
+		if(status == "success"){
+			if(data=="添加失败"){
+				alert("留言失败");
+			}else{
+				alert("留言成功");
+				$("#message").append(
+						
+						"<div class='row'>"+
+						"<div class='col-xs-10 col-xs-offset-1' align='right'>"+
+						"<p class='about_font'>"
+						+text+
+						"</p>"+
+						"</div>"+
+						"</div>"+"<br/>")
+						
+				$("#message_text").val("");
+			}
 		}else{
-			alert("留言成功");
-			$("#message_send").append(
-					
-					"<div class='row'>"+
-					"<div class='col-xs-10 col-xs-offset-1' align='right'>"+
-					"<p class='about_font'>"
-					+text+
-					"</p>"+
-					"</div>"+
-					"</div>"+"<br/>")
-					
-			$("#message_text").val("");
+			alert("留言失败");
 		}
-	});}
-	
-	
+		});
+		
+		
+		}
 	
 }

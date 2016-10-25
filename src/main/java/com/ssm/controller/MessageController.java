@@ -81,7 +81,7 @@ public class MessageController {
 					}
 					Message message = new Message();
 					message.setUnId(un);
-					message.setSendNo(receiverNo);
+					message.setSendNo(sendNo);
 					message.setUpdateTime(time);
 					this.messageService.updateFlag(message);
 				}
@@ -144,7 +144,7 @@ public class MessageController {
 	@RequestMapping("/addMessage")
 	public void addMessage(HttpServletRequest request, Model model, HttpServletResponse response, HttpSession session) {
 		// 设置服务器端响应的编码格式
-		response.setContentType("application/json;charset=utf-8");
+		/* response.setContentType("application/json;charset=utf-8"); */
 		response.setCharacterEncoding("utf-8");
 
 		try {
