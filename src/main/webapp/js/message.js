@@ -4,6 +4,11 @@
 
 //获取留言内容
 $(function(){
+	
+	$.get("message",function(data,status){
+		$("#userMessage_time").text(data);
+	});
+	
 	var otherHref = window.location.href;
 	var arrHref = otherHref.split("?user=");
 	var sendNo = arrHref[1];//arrHref[1]就是username
@@ -17,6 +22,9 @@ $(function(){
 						"<p class='about_font'>"
 						+data[i].content+
 						"</p>"+
+						"<p class='about_fontsmall'>"
+						+data[i].createTime+
+						"</p>"+
 						"</div>"+
 						"</div>"+"<br/>")
 						}
@@ -24,8 +32,11 @@ $(function(){
 							$("#message").append(
 									"<div class='row'>"+
 									"<div class='col-xs-10 col-xs-offset-1'>"+
-									"<p class='about_font'>"
+									"<p class='about_font'>"+data[i].sendNo+":"
 									+data[i].content+
+									"</p>"+
+									"<p class='about_fontsmall'>"
+									+data[i].createTime+
 									"</p>"+
 									"</div>"+
 									"</div>"+"<br/>")
@@ -51,7 +62,7 @@ function message(){
 			if(data=="添加失败"){
 				alert("留言失败");
 			}else{
-				alert("留言成功");
+				
 				$("#message").append(
 						
 						"<div class='row'>"+

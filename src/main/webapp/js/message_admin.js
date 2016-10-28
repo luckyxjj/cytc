@@ -7,26 +7,40 @@ $(function(){
 	var no = arrHref[1];
 	
 	var msg = no.split("&");
-    
-	
-	$.post("message/getMessageAdm",{sendNo:msg[0],receiverNo:msg[1],unreadId:msg[2]},function(data,stutas){
+    var sendNo = ""; 
+    var receiverNo = "";
+	if(msg[0]==0){
+		sendNo=msg[1];
+		receiverNo=msg[0];
+	}else{
+		sendNo=msg[0];
+		receiverNo=msg[1];
+	}
+	$.post("message/getMessageAdm",{sendNo:sendNo,receiverNo:receiverNo,unreadId:msg[2]},function(data,stutas){
 		for(var i=0;i<data.length;i++){
-			if(msg[0]==data[i].sendNo){
+			
+			if(receiverNo==data[i].sendNo){
 				$("#message").append(
 						"<div class='row'>"+
-						"<div class='col-xs-10 col-xs-offset-1'>"+
+						"<div class='col-xs-10 col-xs-offset-1' align='right'>"+
 						"<p class='about_font'>"
 						+data[i].content+
+						"</p>"+
+						"<p class='about_fontsmall'>"
+						+data[i].createTime+
 						"</p>"+
 						"</div>"+
 						"</div>"+"<br/>")
 						}
-			if(msg[1]==data[i].sendNo && data[i].receiverNo){
+			if(sendNo==data[i].sendNo){
 							$("#message").append(
 									"<div class='row'>"+
-									"<div class='col-xs-10 col-xs-offset-1' align='right'>"+
-									"<p class='about_font'>"
+									"<div class='col-xs-10 col-xs-offset-1'>"+
+									"<p class='about_font'>"+data[i].sendNo+":"
 									+data[i].content+
+									"</p>"+
+									"<p class='about_fontsmall'>"
+									+data[i].createTime+
 									"</p>"+
 									"</div>"+
 									"</div>"+"<br/>")
@@ -49,11 +63,12 @@ function message(){
 	if(text==""){
 		alert("请输入留言信息");
 	}else{$.post("message/addMessageAdm",{sendNo:msg[1],receiverNo:msg[0],content:text},function(data,status){
+		
 		if(status == "success"){
 			if(data=="添加失败"){
 				alert("留言失败");
 			}else{
-				alert("留言成功");
+				
 				$("#message").append(
 						
 						"<div class='row'>"+

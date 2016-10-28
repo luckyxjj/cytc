@@ -38,7 +38,12 @@ body {
 .about_font {
 	font-family: "仿宋";
 	font-size: 300%; 
-	color: white;
+	color: silver;
+}
+.about_fontsmall {
+	font-family: "仿宋";
+	font-size: 200%; 
+	color: silver;
 }
 
 .company {
@@ -62,11 +67,12 @@ body {
 }
 
 .login_word {
-	height: 100px !important;
+	height: 125px !important;
+	
 }
 
 .login_img {
-	width: 60px;
+	width: 120px;
 }
 .dl{
 	font-family: "仿宋";
@@ -76,6 +82,7 @@ body {
 .admin_message{
 	border: 1px solid white;
 	border-radius: 10px;
+	height: 100px; 
 }
 .span_hidden:empty{
 	width:20px;
@@ -83,5 +90,20 @@ body {
 }
 .container{
 	width: 375px !important; 
+}
+.login_hp{
+	font-family: "仿宋";
+	font-size: 325%; 
+	color: white;    
+}
+.login_div{
+	text-align: right;
+}
+.message_add{
+	height: 80px;
+    width: 100px;
+    font-size: 30px;
+    font-weight:bold;
+    background-color: aliceblue;
 }
 

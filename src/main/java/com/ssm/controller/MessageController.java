@@ -146,6 +146,9 @@ public class MessageController {
 		// 设置服务器端响应的编码格式
 		/* response.setContentType("application/json;charset=utf-8"); */
 		response.setCharacterEncoding("utf-8");
+		// 获取当前时间
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time2 = format.format(new Date());
 
 		try {
 			/*
@@ -158,7 +161,7 @@ public class MessageController {
 			message.setSendNo(sendNo);
 			message.setReceiverNo(receiverNo);
 			message.setContent(content);
-			message.setCreateTime(time);
+			message.setCreateTime(time2);
 			message.setFlag("F");
 
 			int code = this.messageService.addMessage(message);
@@ -178,8 +181,11 @@ public class MessageController {
 	public void addMessageAdm(HttpServletRequest request, Model model, HttpServletResponse response,
 			HttpSession session) {
 		// 设置服务器端响应的编码格式
-		response.setContentType("application/json;charset=utf-8");
+		/* response.setContentType("application/json;charset=utf-8"); */
 		response.setCharacterEncoding("utf-8");
+		// 获取当前时间
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time2 = format.format(new Date());
 
 		try {
 			/*
@@ -192,7 +198,7 @@ public class MessageController {
 			message.setSendNo(sendNo);
 			message.setReceiverNo(receiverNo);
 			message.setContent(content);
-			message.setCreateTime(time);
+			message.setCreateTime(time2);
 
 			int code = this.messageService.addMessage(message);
 			if (code > 0) {
