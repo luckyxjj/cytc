@@ -116,15 +116,17 @@
 					<label class="col-lg-2 text-right">图片： </label>
 					<div class="col-lg-9">
 						<input type="text" name="imgUrl" value="${business.businessImgList}"
-							class="form-control id-hide" /><c:forEach items="${business.businessImgList}" var="businessImgList" varStatus="status">
+							class="form-control id-hide" />
+							<c:forEach items="${business.businessImgList}" var="businessImgList" varStatus="status">
 							<a href="${businessImgList.imgUrl }" target="_blank">
 							<img src="${businessImgList.imgUrl }"  width="80" height="60"></a>
 							<input type="text" name="imgId" value="${businessImgList.id }"
 									class="form-control id-hide" />
-							</c:forEach>
-						<p>改为：</p>
+									<p>改为：</p>
 						<input type="file" name="businessFile" maxlength="80"
 							data-bv-stringlength-message="长度不能超过80个字符" />
+							</c:forEach>
+						
 					</div>
 				</div>
 				

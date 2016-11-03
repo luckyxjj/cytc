@@ -137,7 +137,7 @@ public class BusinessController {
 							// 转存图片
 							multipartFile.transferTo(saveDir);
 							BusinessImg businessImg = new BusinessImg();
-							businessImg.setBusinessId(id);
+							businessImg.setBusinessId(business.getId());
 							businessImg.setImgUrl(path);
 							businessImg.setCreateTiem(time);
 							this.businessImgService.addBusinessImg(businessImg);
